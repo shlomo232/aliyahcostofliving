@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cost of living calculator</title>
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/darkly/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css" rel="stylesheet">
 <script>
 function recalc() {
 	numSchool=parseInt(document.getElementById("schoolkids").value);
@@ -93,13 +93,17 @@ function recalc() {
 	document.getElementById("iltotal").innerHTML="<b>"+ilsum+"</b>";
 	document.getElementById("ustotaltax").innerHTML="<b>"+ussum+"</b>";
 	document.getElementById("iltotaltax").innerHTML="<b>"+Math.round(ilsum*1.08)+"</b>";
+
 }
 </script>
 </head>
 <body onload="recalc()">
-    <div class="container">
-        <p>This tool is designed to compare cost of living in the US and Israel for a family of 2 adults and any number of kids.</p>
-<p><b>1. Some background:</b>
+<div class="container">
+<h1>Cost of living & Aliyah</h1>
+<p>Are you thinking of making aliyah, but worried about how your standard of living will translate to a different country?
+<p>Use this tool to estimate your cost of living in the US and Israel.
+<p>The calculations are for 2 adults and any number of kids.</p>
+<h3>1. Some background:</h3>
 <p>
 Many of these calculations are based on statistics for the "average" person or family. Of course, nobody is exactly average. Costs vary for many reasons, for example:
 <ul><li> Location (Manhattan vs Mississippi, Tel Aviv vs Beer Sheva)
@@ -107,10 +111,8 @@ Many of these calculations are based on statistics for the "average" person or f
 <li>Individual needs and tastes
 <li>Ability to budget</ul>
 So don't rely on these numbers as an exact prediction of your expenses in a given place. Do rely on them as an approximate comparison of the costs in two different places.
-<p>
-<b>2. Some questions about how you live:</b>
-<p>
-How many school-age kids (K-12) do you have? 
+<h3>2. Some questions about how you live:</h3>
+<p>How many school-age kids (K-12) do you have? 
 <select id="schoolkids" onChange="recalc()">
 <option value="0" selected>0</option>
 <option value="1">1</option>
@@ -125,7 +127,7 @@ How many school-age kids (K-12) do you have?
 <p>
 What school do you send them to in the US?
 <select id="schooltype" onChange="recalc()">
-<option value="private" selected>Private (inc. day school)</option>
+<option value="private" selected>Private (including day school)</option>
 <option value="public">Public</option>
 </select>
 <p>
@@ -164,8 +166,7 @@ Where would you live in Israel?
 <option value="cheap">Periphery</option>
 </select>
 
-<p>
-<b>3. A comparison of your projected expenses per month:</b>
+<h3>3. A comparison of your projected expenses per month:</h3>
 <p>
 <table class="table table-striped">
 <thead>
@@ -180,14 +181,14 @@ Where would you live in Israel?
 <tr><td>Rent</td>
 <td><div id="usrent"></div></td>
 <td><div id="ilrent"></div></td>
-<td class="note"> Assumes on average approximately 2/3 bedroom per kid. US: <a href="http://www.realtor.com">source</a>. IL: <a href="http://www.cbs.gov.il/price_new/a6_4_h.pdf">source</a>, Jerusalem is $800+$130/kid for example. Housing is evaluated in terms of number of bedrooms. Note that Israeli rooms and yards are smaller than those in the US Midwest, for example.</td>
+<td class="note"> Assumes approx. 2/3 bedroom per kid. US: <a href="http://www.realtor.com">source</a>. IL: <a href="http://www.cbs.gov.il/price_new/a6_4_h.pdf">source</a>. Housing is evaluated in terms of number of bedrooms. Note that Israeli rooms and yards are smaller than those in the US Midwest, for example.</td>
 </tr>
 
 <tr>
 <td>Arnona</td>
 <td><div id="usarnona">0</div></td>
 <td><div id="ilarnona">100</div></td>
-<td class="note"> IL: Assuming 50sh/sq.m. for a 100sq.m. apartment. (<a href="http://www.themarker.com/realestate/1.2139045">source</a>). US real estate tax of about $250/month (a rough average over states where Jews live - <a href="https://eyeonhousing.files.wordpress.com/2013/10/map_1.png">source</a>) is included in rent.</td>
+<td class="note"> IL: Assumes 50sh/sq.m. for a 100sq.m. apartment. (<a href="http://www.themarker.com/realestate/1.2139045">source</a>). US real estate tax of about $250/month (in states where Jews live - <a href="https://eyeonhousing.files.wordpress.com/2013/10/map_1.png">source</a>) is included in rent.</td>
 </tr>
 
 <tr><td>Electricity </td>
@@ -205,7 +206,7 @@ Where would you live in Israel?
 <tr><td>Home repairs</td>
 <td><div id="usrepair">40</div></td>
 <td><div id="ilrepair">30</div></td>
-<td class="note">This is based on the assumption of 1 handyman visit every 2 months. US: <a href="http://www.angieslist.com/articles/how-much-does-it-cost-hire-handyman.htm">source</a>. IL: based on my experience with multiple handymen, rounded up.</td>
+<td class="note">Assumes 1 handyman visit every 2 months. US: <a href="http://www.angieslist.com/articles/how-much-does-it-cost-hire-handyman.htm">source</a>. IL: from my experience.</td>
 </tr>
 
 <tr><td>Transportation</td>
@@ -214,7 +215,7 @@ Where would you live in Israel?
 <td class="note">US: <a href="http://www.investopedia.com/articles/pf/08/cost-car-ownership.asp">source</a>, IL: <a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a> <a href="http://www.ynet.co.il/articles/1,7340,L-3463513,00.html">source</a>. The difference between US and Israeli transportation costs is surprisingly small, giving the large taxes on car purchases and fuel in Israel. I expect this is partly because Israelis need to drive shorter distances on average (there is less urban sprawl), and partly because they buy cheaper cars on average (fewer SUVs or minivans).</td>
 </tr>
 
-<tr><td>Education (K-12)</td>
+<tr><td>School (K-12)</td>
 <td><div id="usschool"></div></td>
 <td><div id="ilschool"></div></td>
 <td class="note">IL supplements $35/kid (<a href="http://www.hila-equal-edu.org.il/heb/?p=254">source</a>)</td>
@@ -229,31 +230,31 @@ Where would you live in Israel?
 <tr><td>Food</td>
 <td><div id="usfood"></div></td>
 <td><div id="ilfood"></div></td>
-<td class="note">Average expenditures: US: $220/person (<a href="http://www.cnpp.usda.gov/sites/default/files/CostofFoodMar2015.pdf">source</a>), IL: $175/person (<a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a>). While certain packaged foods are famously more expensive in Israel than in the US, other goods (like fruit, vegetables, and bread) are much cheaper (<a href="http://www.numbeo.com/cost-of-living/compare_countries_result.jsp?country1=United+States&country2=Israel">source</a>). Since food demand is economically inelastic, and calculating a representative food budget is difficult, here we rely on average expenditures for each country.</td>
+<td class="note">Average expenditures: US: $220/person (<a href="http://www.cnpp.usda.gov/sites/default/files/CostofFoodMar2015.pdf">source</a>), IL: $175/person (<a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a>). While certain packaged foods are famously more expensive in Israel than in the US, other goods are much cheaper (<a href="http://www.numbeo.com/cost-of-living/compare_countries_result.jsp?country1=United+States&country2=Israel">source</a>). Since food demand is economically inelastic, here we rely on average expenditures for each country.</td>
 </tr>
 
 <tr><td>Clothing</td>
 <td><div id="usclothes"></div></td>
 <td><div id="ilclothes"></div></td>
-<td class="note">US: $70/person (<a href="http://www.loweryourspending.com/average-clothing-costs-per-month-for-1-person.html">source</a>). IL: approximately $110/person (<a href="http://www.numbeo.com/cost-of-living/compare_countries_result.jsp?country1=United+States&country2=Israel">source</a>).</td>
+<td class="note">US: $70/person (<a href="http://www.loweryourspending.com/average-clothing-costs-per-month-for-1-person.html">source</a>). IL: approx. $110/person (<a href="http://www.numbeo.com/cost-of-living/compare_countries_result.jsp?country1=United+States&country2=Israel">source</a>).</td>
 </tr>
 
 <tr><td>Health insurance</td>
 <td><div id="ushealth"></div></td>
 <td><div id="ilhealth">150</div></td>
-<td class="note">US: approximately $300/family (<a href="http://www.webmd.com/health-insurance/insurance-costs/insurance-cost-calculator">source</a>). IL: $150/family. The cost is 3-5% of household income; our calculation assumes average household income. (<a href="http://www.btl.gov.il/Insurance/Health_Insurance/Pages/default.aspx">source</a>)</td>
+<td class="note">US: approx. $300/family (<a href="http://www.webmd.com/health-insurance/insurance-costs/insurance-cost-calculator">source</a>). IL: 3-5% of household income; for average household income this is $150/family. (<a href="http://www.btl.gov.il/Insurance/Health_Insurance/Pages/default.aspx">source</a>)</td>
 </tr>
 
-<tr><td>Phone service for two</td>
+<tr><td>Phone</td>
 <td><div id="usphone">120</div></td>
 <td><div id="ilphone">30</div></td>
-<td class="note">US: <a href="http://www.dailytech.com/Average+Mobile+Phone+Bill+in+US+is+Growing+Despite+Competition/article34485.htm">source</a>. IL: <a href="http://www.kamaze.co.il/%D7%92%D7%95%D7%9C%D7%9F-%D7%98%D7%9C%D7%A7%D7%95%D7%9D.aspx">source</a>.</td>
+<td class="note">Full plans for two phones. US: <a href="http://www.dailytech.com/Average+Mobile+Phone+Bill+in+US+is+Growing+Despite+Competition/article34485.htm">source</a>. IL: <a href="http://www.kamaze.co.il/%D7%92%D7%95%D7%9C%D7%9F-%D7%98%D7%9C%D7%A7%D7%95%D7%9D.aspx">source</a>.</td>
 </tr>
 
-<tr><td>Internet for a house</td>
+<tr><td>Internet</td>
 <td><div id="usinternet">70</div></td>
 <td><div id="ilinternet">25</div></td>
-<td class="note">US: <a href="http://www.bbc.com/news/magazine-24528383">source</a>. IL: <a href="http://www.kamaze.co.il/012.aspx">source</a>.</td>
+<td class="note">For one house. US: <a href="http://www.bbc.com/news/magazine-24528383">source</a>. IL: <a href="http://www.kamaze.co.il/012.aspx">source</a>.</td>
 </tr>
 
 
@@ -263,16 +264,27 @@ Where would you live in Israel?
 <td class="note">Cost for one unlocked iPhone 6 in June 2015. We assume each spouse buys one such phone every two years. US: <a href="http://store.apple.com/us/buy-iphone/iphone6">source</a>. IL: <a href="https://www.cellcom.co.il/store/devices/cellphones/item/iphone-6-16gb-2/58">source</a>. This includes IL VAT but not US sales tax.</td>
 </tr>
 
-<tr><td><b>Total value</b></td>
+<tr><td><b>Total cost ($)</b></td>
 <td><div id="ustotal">[calculate]</div></td>
 <td><div id="iltotal">[calculate]</div></td>
 <td class="note"></td>
 </tr>
 </table>
 
+<h3>4. Follow-up:</h3>
+<p>This should help you compare your expenses in the US and Israel. The other side of the coin is your income.
+<p>If you're thinking of aliyah, ask some olim in your future profession what you can expect to work in and earn. This varies a lot by person and career, but someone who's already "in the field" can usually give you a good idea of what to expect.
+<p>Once you have a good guess at your future salary and expenses, you can be confident about whether aliyah will be financially successful for you.
 <p>
-<b>4. Follow-up:</b>
-<p>This should help you compare your expenses in the US and Israel. The other side of the coin is your income. If you're thinking of aliyah, ask some olim in your future profession what you can expect to work in and earn. This varies a lot by person and career, but someone who's already "in the field" can usually give you a good idea of what to expect. Once you have a good guess at your future salary and expenses, you can be confident about whether aliyah will be financially successful for you.
-</div>
+For questions or comments on this page, please contact: 
+<script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'&'+'#'+'9'+'7'+';'+'i'+'l'+'t'+'&'+'#'+'1'+'1'+'1'+';'+'&'+
+'#'+'5'+'8'+';'+'s'+'&'+'#'+'1'+'0'+'4'+';'+'%'+'6'+'C'+'&'+'#'+'1'+'1'+'1'+';'+'&'+'#'+'3'+'7'+';'+
+'6'+'D'+'o'+'&'+'#'+'4'+'6'+';'+'k'+'a'+'t'+'&'+'#'+'1'+'2'+'2'+';'+'&'+'#'+'4'+'6'+';'+'&'+'#'+'1'+
+'0'+'6'+';'+'&'+'#'+'1'+'1'+'7'+';'+'&'+'#'+'1'+'1'+'0'+';'+'&'+'#'+'1'+'0'+'7'+';'+'%'+'4'+'0'+'&'+
+'#'+'1'+'0'+'3'+';'+'m'+'%'+'6'+'1'+'i'+'&'+'#'+'3'+'7'+';'+'6'+'&'+'#'+'6'+'7'+';'+'%'+'2'+'&'+'#'+
+'6'+'9'+';'+'c'+'o'+'m'+"'"+'>'+'s'+'h'+'&'+'#'+'1'+'0'+'8'+';'+'&'+'#'+'1'+'1'+'1'+';'+'&'+'#'+'1'+
+'0'+'9'+';'+'&'+'#'+'1'+'1'+'1'+';'+'&'+'#'+'4'+'6'+';'+'k'+'a'+'t'+'z'+'&'+'#'+'4'+'6'+';'+'j'+'u'+
+'n'+'&'+'#'+'1'+'0'+'7'+';'+'&'+'#'+'6'+'4'+';'+'g'+'m'+'a'+'i'+'&'+'#'+'1'+'0'+'8'+';'+'&'+'#'+'4'+
+'6'+';'+'c'+'&'+'#'+'1'+'1'+'1'+';'+'m'+'<'+'/'+'a'+'>');</script><noscript>[Turn on JavaScript to see the email address]</noscript> (please remove ".junk" from the address, this is to avoid spam).
 </body>
 </html>
