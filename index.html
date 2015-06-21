@@ -24,7 +24,7 @@ function recalc() {
 	else
 		document.getElementById("usrent").innerHTML=600+(numSchool+numGan)*300;
 	if (document.getElementById("illocation").value=="ta")
-		document.getElementById("ilrent").innerHTML=1050+(numSchool+numGan)*210;
+		document.getElementById("ilrent").innerHTML=1350+(numSchool+numGan)*210;
 	else if (document.getElementById("illocation").value=="jm")
 		document.getElementById("ilrent").innerHTML=800+(numSchool+numGan)*130;
 	else
@@ -42,10 +42,13 @@ function recalc() {
 	}
 
 // Schools and gan
-	if (document.getElementById("schooltype").value=="private")
+	if (document.getElementById("schooltype").value=="private") {
 		document.getElementById("usschool").innerHTML=numSchool*1200;
-	else document.getElementById("usschool").innerHTML=0;
-	document.getElementById("ilschool").innerHTML=35*numSchool;
+		document.getElementById("ilschool").innerHTML=200*numSchool;
+	} else {
+		document.getElementById("usschool").innerHTML=0;
+		document.getElementById("ilschool").innerHTML=35*numSchool;
+	}
 	document.getElementById("usgan").innerHTML=numGan*900;
 	document.getElementById("ilgan").innerHTML=numGan*650;
 
@@ -135,7 +138,7 @@ So don't rely on these numbers as an exact prediction of your expenses in a give
         <label for="schooltype" class="col-sm-4 control-label">What school do you send them to in the US?</label>
         <div class="col-sm-8">
             <select class="form-control" id="schooltype" onChange="recalc()">
-                <option value="private" selected>Private (inc. day school)</option>
+                <option value="private" selected>Private (including day school)</option>
                 <option value="public">Public</option>
             </select>
         </div>
@@ -178,8 +181,8 @@ So don't rely on these numbers as an exact prediction of your expenses in a give
         <label for="illocation" class="col-sm-4 control-label">Where would you live in Israel?</label>
         <div class="col-sm-8">
             <select class="form-control" id="illocation" onChange="recalc()">
-                <option value="ta" selected>Tel Aviv</option>
-                <option value="jm">Jerusalem or the "center"</option>
+                <option value="ta" selected>Tel Aviv (expensive neighborhoods)</option>
+                <option value="jm">Jerusalem or the "center" of the country</option>
                 <option value="cheap">Periphery</option>
             </select>
         </div>
@@ -230,20 +233,21 @@ So don't rely on these numbers as an exact prediction of your expenses in a give
 
 <tr><td>Transportation</td>
 <td><div id="ustrans">650</div></td>
-<td><div id="iltrans"></div></td>
-<td class="note">US: <a href="http://www.investopedia.com/articles/pf/08/cost-car-ownership.asp">source</a>, IL: <a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a> <a href="http://www.ynet.co.il/articles/1,7340,L-3463513,00.html">source</a>. The difference between US and Israeli transportation costs is surprisingly small, giving the large taxes on car purchases and fuel in Israel. I expect this is partly because Israelis need to drive shorter distances on average (there is less urban sprawl), and partly because they buy cheaper cars on average (fewer SUVs or minivans).</td>
+<td><div id="iltrans">800</div></td>
+<td class="note">Note that many olim living in cities find they do not need a car, because public transportation is more useful than in the US.<br>  
+US: <a href="http://www.investopedia.com/articles/pf/08/cost-car-ownership.asp">source</a>, IL: <a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a> <a href="http://www.ynet.co.il/articles/1,7340,L-3463513,00.html">source</a>. The difference between US and Israeli transportation costs is surprisingly small, giving the large taxes on car purchases and fuel in Israel. I expect this is partly because Israelis need to drive shorter distances on average (there is less urban sprawl), and partly because they buy cheaper cars on average (fewer SUVs or minivans).</td>
 </tr>
 
 <tr><td>School (K-12)</td>
 <td><div id="usschool"></div></td>
 <td><div id="ilschool"></div></td>
-<td class="note">IL supplements $35/kid (<a href="http://www.hila-equal-edu.org.il/heb/?p=254">source</a>)</td>
+<td class="note">IL supplements $35/kid (<a href="http://www.hila-equal-edu.org.il/heb/?p=254">source</a>), <a href="http://www.mako.co.il/home-family-kids/education/Article-b8827dded871541006.htm">source</a></td>
 </tr>
 
 <tr><td>Childcare/gan</td>
 <td><div id="usgan"></div></td>
 <td><div id="ilgan"></div></td>
-<td class="note">US: $900/kid (<a href="http://www.babycenter.com/0_how-much-youll-spend-on-childcare_1199776.bc">source</a>). IL: $650/kid (<a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a>).</td>
+<td class="note">US: $900/kid (<a href="http://www.babycenter.com/0_how-much-youll-spend-on-childcare_1199776.bc">source</a>). IL: $650/kid (<a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a>). In IL, costs are reportedly higher than this in Tel Aviv, and lower than this elsewhere.</td>
 </tr>
 
 <tr><td>Food</td>
@@ -295,16 +299,15 @@ So don't rely on these numbers as an exact prediction of your expenses in a give
 <p>If you're thinking of aliyah, ask some olim in your future profession what you can expect to work in and earn. This varies a lot by person and career, but someone who's already "in the field" can usually give you a good idea of what to expect.
 <p>Once you have a good guess at your future salary and expenses, you can be confident about whether aliyah will be financially successful for you.
 <p><em>
-For questions or comments on this page, please contact: 
-<script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'&'+'#'+'9'+'7'+';'+'i'+'l'+'t'+'&'+'#'+'1'+'1'+'1'+';'+'&'+
-'#'+'5'+'8'+';'+'s'+'&'+'#'+'1'+'0'+'4'+';'+'%'+'6'+'C'+'&'+'#'+'1'+'1'+'1'+';'+'&'+'#'+'3'+'7'+';'+
-'6'+'D'+'o'+'&'+'#'+'4'+'6'+';'+'k'+'a'+'t'+'&'+'#'+'1'+'2'+'2'+';'+'&'+'#'+'4'+'6'+';'+'&'+'#'+'1'+
-'0'+'6'+';'+'&'+'#'+'1'+'1'+'7'+';'+'&'+'#'+'1'+'1'+'0'+';'+'&'+'#'+'1'+'0'+'7'+';'+'%'+'4'+'0'+'&'+
-'#'+'1'+'0'+'3'+';'+'m'+'%'+'6'+'1'+'i'+'&'+'#'+'3'+'7'+';'+'6'+'&'+'#'+'6'+'7'+';'+'%'+'2'+'&'+'#'+
-'6'+'9'+';'+'c'+'o'+'m'+"'"+'>'+'s'+'h'+'&'+'#'+'1'+'0'+'8'+';'+'&'+'#'+'1'+'1'+'1'+';'+'&'+'#'+'1'+
-'0'+'9'+';'+'&'+'#'+'1'+'1'+'1'+';'+'&'+'#'+'4'+'6'+';'+'k'+'a'+'t'+'z'+'&'+'#'+'4'+'6'+';'+'j'+'u'+
-'n'+'&'+'#'+'1'+'0'+'7'+';'+'&'+'#'+'6'+'4'+';'+'g'+'m'+'a'+'i'+'&'+'#'+'1'+'0'+'8'+';'+'&'+'#'+'4'+
-'6'+';'+'c'+'&'+'#'+'1'+'1'+'1'+';'+'m'+'<'+'/'+'a'+'>');</script><noscript>[Turn on JavaScript to see the email address]</noscript> (please remove ".junk" from the address, this is to avoid spam).</em></p>
+For questions or comments on this page, please contact:
+<script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'&'+'#'+'1'+'0'+'8'+';'+'t'+'o'+'&'+'#'+'5'+'8'+';'+
+'s'+'h'+'l'+'&'+'#'+'3'+'7'+';'+'6'+'&'+'#'+'7'+'0'+';'+'&'+'#'+'1'+'0'+'9'+';'+'&'+'#'+'3'+'7'+';'+
+'&'+'#'+'5'+'4'+';'+'F'+'%'+'2'+'E'+'%'+'6'+'&'+'#'+'6'+'6'+';'+'a'+'%'+'7'+'4'+'%'+'7'+'A'+'%'+'4'+
+'&'+'#'+'4'+'8'+';'+'g'+'m'+'a'+'&'+'#'+'1'+'0'+'5'+';'+'l'+'&'+'#'+'4'+'6'+';'+'c'+'%'+'6'+'F'+'m'+
+"'"+'>'+'&'+'#'+'1'+'1'+'5'+';'+'h'+'l'+'o'+'m'+'o'+'&'+'#'+'4'+'6'+';'+'k'+'a'+'&'+'#'+'1'+'1'+'6'+
+';'+'z'+'&'+'#'+'6'+'4'+';'+'g'+'m'+'&'+'#'+'9'+'7'+';'+'i'+'l'+'&'+'#'+'4'+'6'+';'+'c'+'o'+'m'+'<'+
+'/'+'a'+'>');</script><noscript>[Turn on JavaScript to see the email address]</noscript>
+</p>
 <p>&nbsp;</p>
 </body>
 </html>
