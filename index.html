@@ -19,6 +19,8 @@ function recalc() {
 		document.getElementById("usrent").innerHTML=2000+(numSchool+numGan)*300;
 	else if (document.getElementById("uslocation").value=="LA")
 		document.getElementById("usrent").innerHTML=1400+(numSchool+numGan)*500;
+	else if (document.getElementById("uslocation").value=="Tea")
+		document.getElementById("usrent").innerHTML=1300+(numSchool+numGan)*430;
 	else if (document.getElementById("uslocation").value=="SS")
 		document.getElementById("usrent").innerHTML=1200+(numSchool+numGan)*200;
 	else
@@ -172,6 +174,7 @@ So don't rely on these numbers as an exact prediction of your expenses in a give
                 <option value="UWS" selected>Upper West Side, NYC</option>
                 <option value="LI">Long Island, NY</option>
                 <option value="LA">Encino (upper-middle class suburb of Los Angeles)</option>
+                <option value="Tea">Teaneck, NJ</option>
                 <option value="SS">Silver Spring, MD (middle class suburb of DC)</option>
                 <option value="STL">University City, MO (middle class suburb of St Louis, mediocre schools)</option>
             </select>
@@ -234,7 +237,7 @@ So don't rely on these numbers as an exact prediction of your expenses in a give
 <tr><td>Transportation</td>
 <td><div id="ustrans">650</div></td>
 <td><div id="iltrans">800</div></td>
-<td class="note">Note that many olim living in cities find they do not need a car, because public transportation is more useful than in the US.<br>  
+<td class="note">
 US: <a href="http://www.investopedia.com/articles/pf/08/cost-car-ownership.asp">source</a>, IL: <a href="http://www.calcalist.co.il/money/articles/0,7340,L-3643219,00.html">source</a> <a href="http://www.ynet.co.il/articles/1,7340,L-3463513,00.html">source</a>. The difference between US and Israeli transportation costs is surprisingly small, giving the large taxes on car purchases and fuel in Israel. I expect this is partly because Israelis need to drive shorter distances on average (there is less urban sprawl), and partly because they buy cheaper cars on average (fewer SUVs or minivans).</td>
 </tr>
 
